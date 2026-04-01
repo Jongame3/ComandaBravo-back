@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ComBravoControl.Api/ComBravoControl.Api.csproj" Id="09d466d8-1065-4cea-a1b1-719723a15e2d" />
+  <Project Path="ComBravoControl.BusinessLogic/ComBravoControl.BusinessLogic.csproj" Id="b3d41a8c-67e9-456d-ae4f-7a9ee0762774" />
+  <Project Path="ComBravoControl.DataAccess/ComBravoControl.DataAccess.csproj" Id="7cae808e-d77c-4773-bf52-159b593f77ec" />
+  <Project Path="ComBravoControl.Domain/ComBravoControl.Domains.csproj" Id="60e41d8b-b414-46b7-bbb5-4c73222419ef" />
+</Solution>
