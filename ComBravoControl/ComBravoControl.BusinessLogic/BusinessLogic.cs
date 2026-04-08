@@ -1,5 +1,6 @@
 ﻿using ComBravoControl.BusinessLogic.Interface;
 using ComBravoControl.BusinessLogic.Functions.Auth;
+using ComBravoControl.BusinessLogic.Functions.User;
 
 
 namespace ComBravoControl.BusinessLogic
@@ -12,5 +13,10 @@ namespace ComBravoControl.BusinessLogic
         {
             return new AuthFlow();
         }
+        public IUserActions GetUserActions() 
+        {
+            return new UserFlow();    
+        }
+        
     }
 }

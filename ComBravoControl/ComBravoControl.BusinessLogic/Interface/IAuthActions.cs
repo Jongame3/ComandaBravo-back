@@ -8,5 +8,6 @@ namespace ComBravoControl.BusinessLogic.Interface
     public interface IAuthActions
     {
         object? LoginActionFlow(UserAuthAction auth);
+
     }
 }
