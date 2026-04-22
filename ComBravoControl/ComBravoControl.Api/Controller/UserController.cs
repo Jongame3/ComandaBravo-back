@@ -1,9 +1,9 @@
-﻿using ComBravoControl.BusinessLogic.Interface;
-using ComBravoControl.Domains.Models.User;
+﻿using ComBravo.BusinessLogic.Interface;
+using ComBravo.Domains.Models.User;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ComBravoControl.Api.Controller
+namespace ComBravo.Api.Controller
 {
     [Route("api/User")]
     [ApiController]

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ComBravoControl.Domains.Entities.User;
+using ComBravo.Domains.Entities.User;
 using Microsoft.EntityFrameworkCore;
 
-namespace ComBravoControl.DataAccess.Context
+namespace ComBravo.DataAccess.Context
 {
     public class UserContext : DbContext
     {

@@ -1,11 +1,11 @@
-﻿using ComBravoControl.Domains.Entities.User;
-using ComBravoControl.Domains.Models.User;
-using ComBravoControl.DataAccess.Context;
+﻿using ComBravo.Domains.Entities.User;
+using ComBravo.Domains.Models.User;
+using ComBravo.DataAccess.Context;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ComBravoControl.BusinessLogic.Core.Auth
+namespace ComBravo.BusinessLogic.Core.Auth
 {
     public class AuthActions
     {

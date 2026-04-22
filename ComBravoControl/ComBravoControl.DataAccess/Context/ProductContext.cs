@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ComBravoControl.Domains.Entities.Product;
+using ComBravo.Domains.Entities.Product;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ComBravoControl.DataAccess.Context
+namespace ComBravo.DataAccess.Context
 {
     public class ProductContext : DbContext
     {

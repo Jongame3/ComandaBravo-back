@@ -1,10 +1,10 @@
-﻿using ComBravoControl.Domains.Models.Base;
-using ComBravoControl.Domains.Models.Product;
+﻿using ComBravo.Domains.Models.Base;
+using ComBravo.Domains.Models.Product;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ComBravoControl.BusinessLogic.Interface
+namespace ComBravo.BusinessLogic.Interface
 {
     public interface IProductActions
     {

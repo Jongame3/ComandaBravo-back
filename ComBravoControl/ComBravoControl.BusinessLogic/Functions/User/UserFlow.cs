@@ -1,12 +1,12 @@
-﻿using ComBravoControl.BusinessLogic.Core.User;
-using ComBravoControl.BusinessLogic.Interface;
-using ComBravoControl.Domains.Models.Base;
-using ComBravoControl.Domains.Models.User;
+﻿using ComBravo.BusinessLogic.Core.User;
+using ComBravo.BusinessLogic.Interface;
+using ComBravo.Domains.Models.Base;
+using ComBravo.Domains.Models.User;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ComBravoControl.BusinessLogic.Functions.User
+namespace ComBravo.BusinessLogic.Functions.User
 {
     public class UserFlow : UserActions, IUserActions
     {

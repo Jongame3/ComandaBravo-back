@@ -1,11 +1,11 @@
-﻿using ComBravoControl.BusinessLogic.Core.Auth;
-using ComBravoControl.BusinessLogic.Interface;
-using ComBravoControl.Domains.Models.User;
+﻿using ComBravo.BusinessLogic.Core.Auth;
+using ComBravo.BusinessLogic.Interface;
+using ComBravo.Domains.Models.User;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ComBravoControl.BusinessLogic.Functions.Auth
+namespace ComBravo.BusinessLogic.Functions.Auth
 {
     internal class AuthFlow : AuthActions ,IAuthActions 
     {

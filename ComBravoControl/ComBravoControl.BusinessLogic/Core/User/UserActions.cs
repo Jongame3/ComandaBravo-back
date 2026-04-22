@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ComBravoControl.Domains.Models.User;
-using ComBravoControl.Domains.Entities.User;
-using ComBravoControl.DataAccess.Context;
-using ComBravoControl.Domains.Models.Base;
+using ComBravo.Domains.Models.User;
+using ComBravo.Domains.Entities.User;
+using ComBravo.DataAccess.Context;
+using ComBravo.Domains.Models.Base;
 
-namespace ComBravoControl.BusinessLogic.Core.User
+namespace ComBravo.BusinessLogic.Core.User
 {
     public class UserActions
     {

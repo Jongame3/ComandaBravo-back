@@ -1,9 +1,9 @@
-﻿using ComBravoControl.BusinessLogic.Interface;
-using ComBravoControl.Domains.Models.Product;
+﻿using ComBravo.BusinessLogic.Interface;
+using ComBravo.Domains.Models.Product;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ComBravoControl.Api.Controller
+namespace ComBravo.Api.Controller
 {
     [Route("api/[controller]")]
     [ApiController]

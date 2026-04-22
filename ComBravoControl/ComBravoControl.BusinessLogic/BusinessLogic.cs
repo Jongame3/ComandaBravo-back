@@ -1,10 +1,10 @@
-﻿using ComBravoControl.BusinessLogic.Interface;
-using ComBravoControl.BusinessLogic.Functions.Auth;
-using ComBravoControl.BusinessLogic.Functions.User;
-using ComBravoControl.BusinessLogic.Functions.Product;
+﻿using ComBravo.BusinessLogic.Interface;
+using ComBravo.BusinessLogic.Functions.Auth;
+using ComBravo.BusinessLogic.Functions.User;
+using ComBravo.BusinessLogic.Functions.Product;
 
 
-namespace ComBravoControl.BusinessLogic
+namespace ComBravo.BusinessLogic
 {
     public class BusinessLogic
     {

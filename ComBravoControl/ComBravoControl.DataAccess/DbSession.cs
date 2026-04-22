@@ -1,4 +1,4 @@
-﻿namespace ComBravoControl.DataAccess
+﻿namespace ComBravo.DataAccess
 {
     public class DbSession
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ComBravoControl.Domains.Models.Product
+namespace ComBravo.Domains.Models.Product
 {
     public class ProductDto
     {

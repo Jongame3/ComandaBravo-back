@@ -1,11 +1,11 @@
-﻿using ComBravoControl.DataAccess.Context;
-using ComBravoControl.Domains.Entities.Product;
-using ComBravoControl.Domains.Models.Base;
-using ComBravoControl.Domains.Models.Product;
+﻿using ComBravo.DataAccess.Context;
+using ComBravo.Domains.Entities.Product;
+using ComBravo.Domains.Models.Base;
+using ComBravo.Domains.Models.Product;
 using AutoMapper;
-using ComBravoControl.Domains.Models.User;
+using ComBravo.Domains.Models.User;
 
-namespace ComBravoControl.BusinessLogic.Core.Product
+namespace ComBravo.BusinessLogic.Core.Product
 {
     public class ProductActions
     {

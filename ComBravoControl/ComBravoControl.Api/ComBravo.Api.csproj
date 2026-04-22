@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ComBravoControl.BusinessLogic\ComBravoControl.BusinessLogic.csproj" />
-    <ProjectReference Include="..\ComBravoControl.Domain\ComBravoControl.Domains.csproj" />
+    <ProjectReference Include="..\ComBravoControl.BusinessLogic\ComBravo.BusinessLogic.csproj" />
+    <ProjectReference Include="..\ComBravoControl.Domain\ComBravo.Domains.csproj" />
   </ItemGroup>
 
 </Project>

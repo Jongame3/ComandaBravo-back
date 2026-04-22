@@ -4,7 +4,7 @@ using System.Text;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace ComBravoControl.Domains.Entities.Product
+namespace ComBravo.Domains.Entities.Product
 {
     public class ProductData
     {

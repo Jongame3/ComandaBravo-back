@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ComBravoControl.Api.Controller
+namespace ComBravo.Api.Controller
 {
     [Route("api/[controller]")]
     [ApiController]

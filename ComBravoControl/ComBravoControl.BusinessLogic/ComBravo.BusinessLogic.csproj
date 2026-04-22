@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ComBravoControl.DataAccess\ComBravoControl.DataAccess.csproj" />
-    <ProjectReference Include="..\ComBravoControl.Domain\ComBravoControl.Domains.csproj" />
+    <ProjectReference Include="..\ComBravoControl.DataAccess\ComBravo.DataAccess.csproj" />
+    <ProjectReference Include="..\ComBravoControl.Domain\ComBravo.Domains.csproj" />
   </ItemGroup>
 
 </Project>

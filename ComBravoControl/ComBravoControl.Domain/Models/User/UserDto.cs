@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ComBravoControl.Domains.Models.User
+namespace ComBravo.Domains.Models.User
 {
     public class UserDto
     {

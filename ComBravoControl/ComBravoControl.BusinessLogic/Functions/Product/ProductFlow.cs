@@ -1,12 +1,12 @@
-﻿using ComBravoControl.BusinessLogic.Core.Product;
-using ComBravoControl.BusinessLogic.Interface;
-using ComBravoControl.Domains.Models.Base;
-using ComBravoControl.Domains.Models.Product;
+﻿using ComBravo.BusinessLogic.Core.Product;
+using ComBravo.BusinessLogic.Interface;
+using ComBravo.Domains.Models.Base;
+using ComBravo.Domains.Models.Product;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ComBravoControl.BusinessLogic.Functions.Product
+namespace ComBravo.BusinessLogic.Functions.Product
 {
     public class ProductFlow : ProductActions, IProductActions
     {

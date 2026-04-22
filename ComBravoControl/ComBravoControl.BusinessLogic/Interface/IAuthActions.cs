@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ComBravoControl.Domains.Models.User;
+using ComBravo.Domains.Models.User;
 
-namespace ComBravoControl.BusinessLogic.Interface
+namespace ComBravo.BusinessLogic.Interface
 {
     public interface IAuthActions
     {

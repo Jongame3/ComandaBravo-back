@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ComBravoControl.Domains.Models.Base
+namespace ComBravo.Domains.Models.Base
 {
     public class ResponseMsg
     {
