@@ -1,3 +1,4 @@
+using ComBravo.Domains.Profiles;
 using Microsoft.EntityFrameworkCore.Design;
 
 var builder = WebApplication.CreateBuilder(args);

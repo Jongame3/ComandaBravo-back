@@ -17,8 +17,8 @@ namespace ComBravo.Domains.Entities.Product
         public decimal Price { get; set; }
         [Required, StringLength(200)]
         public string? Description { get; set; }
-        [Required, DataType(DataType.Date)]
-        public DateTime Duration { get; set; }
+        [Required]
+        public int Duration { get; set; }
         [Required,StringLength(100)]
         public string? Url { get; set; }
     }

@@ -14,15 +14,14 @@ namespace ComBravo.Domains.Entities.Pet
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id {  get; set; }
         [Required, StringLength(20)]
-        public string? Name { get; set; }
-        public string? HealthProblems { get; set; }
+        public string Name { get; set; }
+        public string HealthProblems { get; set; }
         [Required]
         public PetType Type { get; set; }
-        [ForeignKey("UserID")]
         [Required]
         public string? UserID { get; set; }
-        [Required]
-        public UserData? Owner { get; set; }
+        //[Required]
+        //public UserData Owner { get; set; }
 
     }
 }

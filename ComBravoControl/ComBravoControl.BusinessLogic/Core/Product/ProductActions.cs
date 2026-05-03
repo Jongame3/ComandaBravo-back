@@ -105,10 +105,10 @@ namespace ComBravo.BusinessLogic.Core.Product
                 }
 
                 pData.Name = product.Name;
-                pData.Price = pData.Price;
-                pData.Duration = pData.Duration;
-                pData.Description = pData.Description;
-                pData.Url = pData.Url;
+                pData.Price = product.Price;
+                pData.Duration = product.Duration;
+                pData.Description = product.Description;
+                pData.Url = product.Url;
 
                 db.SaveChanges();
             }

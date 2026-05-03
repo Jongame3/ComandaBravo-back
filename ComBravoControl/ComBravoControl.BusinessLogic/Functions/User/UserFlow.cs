@@ -1,4 +1,5 @@
-﻿using ComBravo.BusinessLogic.Core.User;
+﻿using AutoMapper;
+using ComBravo.BusinessLogic.Core.User;
 using ComBravo.BusinessLogic.Interface;
 using ComBravo.Domains.Models.Base;
 using ComBravo.Domains.Models.User;
@@ -10,6 +11,7 @@ namespace ComBravo.BusinessLogic.Functions.User
 {
     public class UserFlow : UserActions, IUserActions
     {
+
         public List<UserDto> GetAllUsersAction()
         {
             return ExecuteGetAllUserAction();

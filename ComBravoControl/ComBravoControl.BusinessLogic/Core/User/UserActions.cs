@@ -5,6 +5,7 @@ using ComBravo.Domains.Models.User;
 using ComBravo.Domains.Entities.User;
 using ComBravo.DataAccess.Context;
 using ComBravo.Domains.Models.Base;
+using AutoMapper;
 
 namespace ComBravo.BusinessLogic.Core.User
 {
@@ -12,6 +13,7 @@ namespace ComBravo.BusinessLogic.Core.User
     {
         protected List<UserDto> ExecuteGetAllUserAction()
         {
+            
             var users = new List<UserDto>();
             List<UserData> uData;
 

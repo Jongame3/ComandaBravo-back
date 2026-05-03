@@ -2,6 +2,7 @@
 using ComBravo.BusinessLogic.Functions.Auth;
 using ComBravo.BusinessLogic.Functions.User;
 using ComBravo.BusinessLogic.Functions.Product;
+using ComBravo.BusinessLogic.Functions.Pet;
 
 
 namespace ComBravo.BusinessLogic
@@ -22,6 +23,11 @@ namespace ComBravo.BusinessLogic
         public IProductActions GetProductActions() 
         {
             return new ProductFlow();
+        }
+
+        public IPetActions GetPetActions()
+        {
+            return new PetFlow();
         }
     }
 }

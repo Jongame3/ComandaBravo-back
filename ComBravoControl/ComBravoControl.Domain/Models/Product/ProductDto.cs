@@ -10,7 +10,7 @@ namespace ComBravo.Domains.Models.Product
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        public DateTime Duration { get; set; }
+        public int Duration { get; set; }
         public string Url { get; set; }
     }
 }
