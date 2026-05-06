@@ -1,7 +1,4 @@
 ﻿using ComBravo.Domains.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ComBravo.Domains.Models.Pet
 {
@@ -10,6 +7,7 @@ namespace ComBravo.Domains.Models.Pet
         public int Id { get; set; }
         public string Name { get; set; }
         public string HealthProblems { get; set; }
+        public int UserID { get; set; }
         public PetType Type {  get; set; }
     }
 }

@@ -2,9 +2,6 @@
 using ComBravo.Domains.Entities.Pet;
 using ComBravo.Domains.Models.Base;
 using ComBravo.Domains.Models.Pet;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ComBravo.BusinessLogic.Core.Pet
 {
@@ -26,7 +23,8 @@ namespace ComBravo.BusinessLogic.Core.Pet
                     Id = pet.Id,
                     Name = pet.Name,
                     HealthProblems = pet.HealthProblems,
-                    Type = pet.Type
+                    Type = pet.Type,
+                    UserID = pet.UserID
                 };
                 pets.Add(pet_);
             }
@@ -49,7 +47,8 @@ namespace ComBravo.BusinessLogic.Core.Pet
                 Id = pet.Id,
                 Name = pet.Name,
                 HealthProblems = pet.HealthProblems,
-                Type = pet.Type
+                Type = pet.Type,
+                UserID = pet.UserID
             }; 
         }
 
@@ -69,7 +68,8 @@ namespace ComBravo.BusinessLogic.Core.Pet
                 Id = pet.Id,
                 Name = pet.Name,
                 Type = pet.Type,
-                HealthProblems = pet.HealthProblems
+                HealthProblems = pet.HealthProblems,
+                UserID = pet.UserID
             }; 
 
             using (var db  = new PetContext())
@@ -93,6 +93,7 @@ namespace ComBravo.BusinessLogic.Core.Pet
                 pData.Name = pet.Name;
                 pData.HealthProblems = pet.HealthProblems;
                 pData.Type = pet.Type;
+                pData.UserID = pet.UserID;
 
                 db.SaveChanges();
             }

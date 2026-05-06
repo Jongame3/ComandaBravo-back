@@ -1,7 +1,5 @@
-﻿using ComBravo.BusinessLogic;
-using ComBravo.BusinessLogic.Interface;
+﻿using ComBravo.BusinessLogic.Interface;
 using ComBravo.Domains.Models.Pet;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComBravo.Api.Controller

@@ -3,6 +3,7 @@ using ComBravo.BusinessLogic.Functions.Auth;
 using ComBravo.BusinessLogic.Functions.User;
 using ComBravo.BusinessLogic.Functions.Product;
 using ComBravo.BusinessLogic.Functions.Pet;
+using ComBravo.BusinessLogic.Functions.Appointment;
 
 
 namespace ComBravo.BusinessLogic
@@ -28,6 +29,11 @@ namespace ComBravo.BusinessLogic
         public IPetActions GetPetActions()
         {
             return new PetFlow();
+        }
+
+        public IAppointmentActions GetAppointmentActions() 
+        {
+            return new AppointmentFlow();
         }
     }
 }

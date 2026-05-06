@@ -25,5 +25,7 @@ namespace ComBravo.Domains.Entities.User
         [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
 
+
+
     }
 }

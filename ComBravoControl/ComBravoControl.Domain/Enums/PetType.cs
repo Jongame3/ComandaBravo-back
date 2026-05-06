@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ComBravo.Domains.Enums
+﻿namespace ComBravo.Domains.Enums
 {
     public enum PetType
     {
