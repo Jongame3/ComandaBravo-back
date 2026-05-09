@@ -1,5 +1,6 @@
 ﻿using ComBravo.BusinessLogic.Interface;
 using ComBravo.Domains.Models.Appointment;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,7 @@ namespace ComBravo.Api.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class AppointmentController : ControllerBase
     {
         private IAppointmentActions _apointment;
@@ -18,6 +20,7 @@ namespace ComBravo.Api.Controller
         }
 
         [HttpGet("All")]
+        [Authorize(Roles ="Vet")]
         public IActionResult GetAll() 
         {
             var result = _apointment.GetAllAppointmentsAction();
@@ -25,6 +28,7 @@ namespace ComBravo.Api.Controller
         }
 
         [HttpGet("by Id")]
+        [Authorize(Roles = "Vet")]
         public IActionResult GetById(int id) 
         {
             var result = _apointment.GetAppointmentByIdAction(id);
@@ -43,7 +47,7 @@ namespace ComBravo.Api.Controller
             return Ok(status);
         }
         [HttpPut]
-        public IActionResult Put(AppointmentDto dto) 
+        public IActionResult Update(AppointmentDto dto) 
         {
             var status = _apointment.UpdateAppointmentAction(dto);
             return Ok(status);

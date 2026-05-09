@@ -12,6 +12,11 @@ namespace ComBravo.BusinessLogic.Functions.Pet
             return ExecuteGetAllPetsAction();
         }
 
+        public List<PetDto> GetAllPetsByUserIdAction(int userId)
+        {
+            return ExecuteGetPetByUserIdAction(userId);
+        }
+
         public PetDto GetPetByIdAction(int id)
         {
             return ExecuteGetPetById(id);

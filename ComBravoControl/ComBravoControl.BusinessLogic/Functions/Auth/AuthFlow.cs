@@ -1,18 +1,34 @@
-﻿using ComBravo.BusinessLogic.Core.Auth;
+﻿
+using ComBravo.BusinessLogic.Core.Auth;
 using ComBravo.BusinessLogic.Interface;
+using ComBravo.Domains.Models.Base;
 using ComBravo.Domains.Models.User;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace ComBravo.BusinessLogic.Functions.Auth
 {
-    internal class AuthFlow : AuthActions ,IAuthActions 
+    public class AuthFlow : AuthActions ,IAuthActions 
     {
-        public object? LoginActionFlow(UserAuthAction auth)
+        public ResponseAction LoginActionFlow(UserAuthDto auth)
         {
-            var isValid = ValidateLogin(auth);
-            return isValid ? GenToken(auth) : null; 
+            var user = ValidateLogin(auth);
+            if (user == null) 
+            {
+                return new ResponseAction()
+                {
+                    IsSucces = false,
+                    Message = "Invalid username or password"
+                };
+            }
+
+            var token = GenerateUserToken(user);
+
+            return new ResponseAction()
+            {
+                IsSucces = true,
+                Message = token,
+                Id = user.Id
+            };
         }
     }
 }

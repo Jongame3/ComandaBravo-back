@@ -31,7 +31,8 @@ namespace ComBravo.BusinessLogic.Core.User
                     Password = user.Password,
                     Contacts = user.Contacts,
                     Email = user.Email,
-                    DOB = user.DOB
+                    DOB = user.DOB,
+                    Role = user.Role
                 };
                 users.Add(user_);
             }
@@ -59,7 +60,8 @@ namespace ComBravo.BusinessLogic.Core.User
                 Password = uData.Password,
                 Contacts = uData.Contacts,
                 Email = uData.Email,
-                DOB = uData.DOB
+                DOB = uData.DOB,
+                Role = uData.Role
             };
         }
 
@@ -78,6 +80,7 @@ namespace ComBravo.BusinessLogic.Core.User
                 uData.Password = user.Password;
                 uData.Contacts = user.Contacts;
                 uData.Email = user.Email;
+                uData.Role = user.Role;
 
                 db.SaveChanges();
             }
@@ -121,7 +124,8 @@ namespace ComBravo.BusinessLogic.Core.User
                 Password = user.Password,
                 Contacts = user.Contacts,
                 Email = user.Email,
-                DOB = user.DOB
+                DOB = user.DOB,
+                Role = user.Role
             };
 
             using (var db = new UserContext())

@@ -1,15 +1,16 @@
 ﻿using ComBravo.BusinessLogic.Interface;
 using ComBravo.Domains.Models.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComBravo.Api.Controller
 {
-    [Route("api/[controller]")]
+    [Route("api/session")]
     [ApiController]
     public class AuthController : ControllerBase
     {
-        internal IAuthActions _auth;
+        private readonly IAuthActions _auth;
 
         public AuthController()
         {
@@ -18,18 +19,22 @@ namespace ComBravo.Api.Controller
         }
 
         [HttpGet("status")]
+        [AllowAnonymous]
         public IActionResult Get() 
         {
             return Ok("Session is active");
         }
 
         [HttpPost("auth")]
-        public IActionResult Post([FromBody] UserAuthAction data)
+        public IActionResult Auth([FromBody] UserAuthDto data)
         {
             var authStatus = _auth.LoginActionFlow(data);
 
-            string token = "";
-            return Ok(token);
+            if (authStatus.IsSucces == false) 
+            {
+                return Unauthorized(authStatus.Message);
+            }
+            return Ok(new {token = authStatus.Message});
         }
     }
 }

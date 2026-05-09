@@ -1,5 +1,6 @@
 ﻿using ComBravo.BusinessLogic.Interface;
 using ComBravo.Domains.Models.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +18,7 @@ namespace ComBravo.Api.Controller
             _user = bl.GetUserActions();
         }
         [HttpGet("getAll")]
+        
         public IActionResult GetAllUsers()
         {
             var users = _user.GetAllUsersAction();

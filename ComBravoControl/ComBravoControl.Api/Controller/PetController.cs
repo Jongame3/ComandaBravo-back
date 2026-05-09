@@ -1,11 +1,13 @@
 ﻿using ComBravo.BusinessLogic.Interface;
 using ComBravo.Domains.Models.Pet;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComBravo.Api.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PetController : ControllerBase
     {
         private IPetActions _pet;
@@ -27,6 +29,12 @@ namespace ComBravo.Api.Controller
         {
             var pet = _pet.GetPetByIdAction(id);
             return Ok(pet);
+        }
+        [HttpGet("GetByUserId")]
+        public IActionResult GetByUserId(int userId)
+        {
+            var pets = _pet.GetAllPetsByUserIdAction(userId);
+            return Ok(pets);
         }
         [HttpPut]
         public IActionResult Update (PetDto pet)

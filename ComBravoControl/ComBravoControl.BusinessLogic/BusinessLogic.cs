@@ -16,6 +16,11 @@ namespace ComBravo.BusinessLogic
         {
             return new AuthFlow();
         }
+
+        public IRegisterAction GetRegisterAction()
+        {
+            return new RegistrationFlow();
+        }
         public IUserActions GetUserActions() 
         {
             return new UserFlow();    

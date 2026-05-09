@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ComBravo.Domains.Models.User
 {
-    public class UserAuthAction
+    public class UserAuthDto
     {
         public string Login { get; set; }
         public string Password { get; set; }

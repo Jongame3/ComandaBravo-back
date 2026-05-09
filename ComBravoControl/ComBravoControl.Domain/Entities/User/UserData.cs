@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using ComBravo.Domains.Enums;
 
 namespace ComBravo.Domains.Entities.User
 {
@@ -25,7 +26,7 @@ namespace ComBravo.Domains.Entities.User
         [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
 
-
+        public UserRole Role { get; set;  }
 
     }
 }

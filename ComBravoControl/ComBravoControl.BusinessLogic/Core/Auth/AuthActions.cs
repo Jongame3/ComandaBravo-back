@@ -4,27 +4,29 @@ using ComBravo.DataAccess.Context;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using ComBravo.BusinessLogic.Structure;
 
 namespace ComBravo.BusinessLogic.Core.Auth
 {
     public class AuthActions
     {
-        internal bool ValidateLogin(UserAuthAction data)
+        internal UserData? ValidateLogin(UserAuthDto data)
         {
-            UserData? local;
-            using (var db = new UserContext())
-            {
-                local = db.Users.FirstOrDefault(u => u.Username == data.Login && u.Password == data.Password);
-            }
+            if (string.IsNullOrEmpty(data.Login) || string.IsNullOrEmpty(data.Password))
+                return null;
 
-            if (string.IsNullOrEmpty(data.Login) && string.IsNullOrEmpty(data.Password))
-                return false;
-            return true;
+            var passwordHash = PasswordHasher.Hash(data.Password);
+
+            using( var db = new UserContext())
+            {
+                return db.Users.FirstOrDefault(x => (x.Username == data.Login || x.Email == data.Login) && x.Password == passwordHash);
+            }
         }
 
-        internal string GenToken(UserAuthAction data)
+        internal string GenerateUserToken(UserData user)
         {
-            return "TOKEN";
+            var token = new TokenService();
+            return token.GenerateToken(user.Id, user.Username, user.Role.ToString());
         }
     }
 }

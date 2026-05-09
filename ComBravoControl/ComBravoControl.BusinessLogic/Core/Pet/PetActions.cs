@@ -31,6 +31,36 @@ namespace ComBravo.BusinessLogic.Core.Pet
             return pets;
         }
 
+
+        protected List<PetDto> ExecuteGetPetByUserIdAction(int uId)
+        {
+            List<PetData> pets;
+            var returnpets = new List<PetDto>();
+            using (var db = new PetContext())
+            {
+                pets = db.Pets.ToList().FindAll(x => x.UserID == uId);
+            }
+            if (pets == null)
+            {
+                return null;
+            }
+
+            foreach (var pet in pets)
+            {
+                var pet_ = new PetDto
+                {
+                    Id = pet.Id,
+                    Name = pet.Name,
+                    HealthProblems = pet.HealthProblems,
+                    Type = pet.Type,
+                    UserID = pet.UserID
+                };
+                returnpets.Add(pet_);
+            }
+            return returnpets;
+
+        }
+
         protected PetDto ExecuteGetPetById(int id)
         {
             PetData? pet;
