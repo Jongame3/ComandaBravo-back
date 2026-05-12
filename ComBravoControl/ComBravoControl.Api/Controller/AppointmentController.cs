@@ -20,7 +20,7 @@ namespace ComBravo.Api.Controller
         }
 
         [HttpGet("All")]
-        [Authorize(Roles ="Vet")]
+        [Authorize(Roles = "Vet")]
         public IActionResult GetAll() 
         {
             var result = _apointment.GetAllAppointmentsAction();
@@ -34,19 +34,43 @@ namespace ComBravo.Api.Controller
             var result = _apointment.GetAppointmentByIdAction(id);
             return Ok(result);
         }
+
+        [HttpGet("GetByUserId")]
+        public IActionResult GetByUserId(int userId) 
+        {
+            var result = _apointment.GetAllAppointmentsByUserIdAction(userId);
+            return Ok(result);
+        }
+
+        [HttpGet("GetByDate")]
+        public IActionResult GetByDate(DateOnly date)
+        {
+            var result = _apointment.GetAllAppointmentsByDateAction(date);
+            return Ok(result);
+        }
+        [HttpGet("GetFreeHours")]
+        public IActionResult GetFreeHours(DateOnly date)
+        {
+            var result = _apointment.GetEmptyHoursByDateAction(date);
+            return Ok(result);
+        }
+
         [HttpPost]
         public IActionResult Create(AppointmentDto dto) 
         {
             var status = _apointment.CreateAppointmentAction(dto);
             return Ok(status);
         }
+
         [HttpDelete]
         public IActionResult Delete(int id) 
         {
             var status = _apointment.DeleteAppointmentAction(id);
             return Ok(status);
         }
+
         [HttpPut]
+        [Authorize(Roles ="Vet")]
         public IActionResult Update(AppointmentDto dto) 
         {
             var status = _apointment.UpdateAppointmentAction(dto);

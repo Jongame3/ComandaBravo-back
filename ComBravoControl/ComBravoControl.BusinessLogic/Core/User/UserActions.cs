@@ -6,6 +6,7 @@ using ComBravo.Domains.Entities.User;
 using ComBravo.DataAccess.Context;
 using ComBravo.Domains.Models.Base;
 using AutoMapper;
+using ComBravo.BusinessLogic.Structure;
 
 namespace ComBravo.BusinessLogic.Core.User
 {
@@ -121,7 +122,7 @@ namespace ComBravo.BusinessLogic.Core.User
             var uLocalData = new UserData()
             {
                 Username = user.Username,
-                Password = user.Password,
+                Password = PasswordHasher.Hash(user.Password),
                 Contacts = user.Contacts,
                 Email = user.Email,
                 DOB = user.DOB,

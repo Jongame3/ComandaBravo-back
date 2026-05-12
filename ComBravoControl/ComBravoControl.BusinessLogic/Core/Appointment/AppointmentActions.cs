@@ -17,7 +17,74 @@ namespace ComBravo.BusinessLogic.Core.Appointment
                 aData = db.Appointments.ToList();
             }
 
+            if (aData == null)
+            {
+                return null;
+            }
+
             foreach ( var item in aData)
+            {
+                var localdto = new AppointmentDto()
+                {
+                    Id = item.Id,
+                    UserId = item.UserId,
+                    ProductInfo = item.ProductInfo,
+                    StartTime = item.StartTime,
+                    Date = item.Date,
+                    Duration = item.Duration,
+                    PetInfo = item.PetInfo
+                };
+
+                returnList.Add(localdto);
+            }
+            return returnList;
+        }
+
+        protected List<int> ExecuteGetEmptyHoursByDateAction(DateOnly date)
+        {
+            var BusyHours = new List<int>();
+            var EmptyHours = new List<int>();
+            List<AppointmentData> aData;
+
+            using (var db = new AppointmentContext())
+            {
+                aData = db.Appointments.ToList().FindAll(x=> x.Date == date);
+            }
+
+            foreach(var e in aData)
+            {
+                for(int i = 0; i<e.Duration; i++)
+                {
+                    BusyHours.Add(e.StartTime + i);
+                }
+            }
+
+            for(int i = 9; i < 19 ;i++)
+            {
+                if (BusyHours.Find(x => x == i) == default(int))
+                {
+                    EmptyHours.Add(i);
+                }
+            }
+
+            return EmptyHours;
+        }
+        protected List<AppointmentDto> ExecuteGetAllAppointmentsByUserIdAction(int uId)
+        {
+            var returnList = new List<AppointmentDto>();
+            List<AppointmentData> aData;
+
+            using (var db = new AppointmentContext())
+            {
+                aData = db.Appointments.ToList().FindAll(x=> x.UserId == uId);
+            }
+
+            if (aData == null)
+            {
+                return null;
+            }
+
+            foreach (var item in aData)
             {
                 var localdto = new AppointmentDto()
                 {
@@ -60,9 +127,42 @@ namespace ComBravo.BusinessLogic.Core.Appointment
                 
             };
         }
+
+        protected List<AppointmentDto> ExecuteGetAllAppointmentsByDateAction(DateOnly date)
+        {
+            var returnList = new List<AppointmentDto>();
+            List<AppointmentData> aData;
+
+            using (var db = new AppointmentContext())
+            {
+                aData = db.Appointments.ToList().FindAll(x => x.Date == date);
+            }
+
+            if (aData == null)
+            {
+                return null;
+            }
+
+            foreach (var item in aData)
+            {
+                var localdto = new AppointmentDto()
+                {
+                    Id = item.Id,
+                    UserId = item.UserId,
+                    ProductInfo = item.ProductInfo,
+                    StartTime = item.StartTime,
+                    Date = item.Date,
+                    Duration = item.Duration,
+                    PetInfo = item.PetInfo
+                };
+
+                returnList.Add(localdto);
+            }
+            return returnList;
+        }
         protected ResponseAction ExecuteCreateAppointmentAction(AppointmentDto appointment)
         {
-            AppointmentData aData; 
+            AppointmentData? aData; 
             using (var db = new AppointmentContext()) 
             {
                 aData = db.Appointments.FirstOrDefault(x => x.Id == appointment.Id && x.UserId == appointment.UserId);

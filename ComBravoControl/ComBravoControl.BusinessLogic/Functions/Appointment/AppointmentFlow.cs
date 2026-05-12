@@ -11,6 +11,10 @@ namespace ComBravo.BusinessLogic.Functions.Appointment
         {
             return ExecuteGetAllAppointmentsAction();
         }
+        public List<AppointmentDto> GetAllAppointmentsByUserIdAction(int uId)
+        {
+            return ExecuteGetAllAppointmentsByUserIdAction(uId);
+        }
         public AppointmentDto GetAppointmentByIdAction(int id)
         {
             return ExecuteGetAppointmentByIdAction(id);
@@ -26,6 +30,16 @@ namespace ComBravo.BusinessLogic.Functions.Appointment
         public ResponseMsg UpdateAppointmentAction(AppointmentDto appointment)
         {
             return ExecuteUpdateAppointmentAction(appointment);
+        }
+
+        public List<int> GetEmptyHoursByDateAction(DateOnly date)
+        {
+            return ExecuteGetEmptyHoursByDateAction(date);
+        }
+
+        public List<AppointmentDto> GetAllAppointmentsByDateAction(DateOnly date)
+        {
+            return ExecuteGetAllAppointmentsByDateAction(date);
         }
     }
 }

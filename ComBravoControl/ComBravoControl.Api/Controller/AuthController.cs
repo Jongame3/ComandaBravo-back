@@ -8,6 +8,7 @@ namespace ComBravo.Api.Controller
 {
     [Route("api/session")]
     [ApiController]
+    [Authorize]
     public class AuthController : ControllerBase
     {
         private readonly IAuthActions _auth;
@@ -24,7 +25,7 @@ namespace ComBravo.Api.Controller
         {
             return Ok("Session is active");
         }
-
+        [AllowAnonymous]
         [HttpPost("auth")]
         public IActionResult Auth([FromBody] UserAuthDto data)
         {
