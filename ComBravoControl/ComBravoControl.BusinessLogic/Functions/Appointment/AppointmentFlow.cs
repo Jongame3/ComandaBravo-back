@@ -41,5 +41,10 @@ namespace ComBravo.BusinessLogic.Functions.Appointment
         {
             return ExecuteGetAllAppointmentsByDateAction(date);
         }
+
+        public ResponseMsg ApproveAppointmentAction(int id)
+        {
+            return ExecuteApproveAppointmentAction(id);
+        }
     }
 }

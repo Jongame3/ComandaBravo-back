@@ -19,7 +19,5 @@ namespace ComBravo.Domains.Entities.Product
         public string? Description { get; set; }
         [Required]
         public int Duration { get; set; }
-        [Required,StringLength(100)]
-        public string? Url { get; set; }
     }
 }

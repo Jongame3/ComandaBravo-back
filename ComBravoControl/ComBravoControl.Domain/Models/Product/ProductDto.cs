@@ -11,6 +11,5 @@ namespace ComBravo.Domains.Models.Product
         public decimal Price { get; set; }
         public string Description { get; set; }
         public int Duration { get; set; }
-        public string Url { get; set; }
     }
 }

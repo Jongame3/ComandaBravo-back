@@ -12,6 +12,8 @@ namespace ComBravo.Domains.Entities.Appointment
         [Required]
         public int UserId { get; set; }
         [Required]
+        public string Username { get; set; }
+        [Required]
         public string ProductInfo { get; set; }
         [Required]
         public int StartTime { get; set; }
@@ -21,5 +23,7 @@ namespace ComBravo.Domains.Entities.Appointment
         public string PetInfo { get; set; }
         [Required]
         public int Duration { get; set; }
+        [Required]
+        public bool IsApproved { get; set; }
     }
 }

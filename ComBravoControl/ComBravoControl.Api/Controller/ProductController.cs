@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ComBravo.Api.Controller
 {
-    [Route("api/[controller]")]
+    [Route("api/product")]
     [ApiController]
     [Authorize]
     public class ProductController : ControllerBase

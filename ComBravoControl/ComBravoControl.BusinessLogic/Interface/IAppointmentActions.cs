@@ -14,6 +14,7 @@ namespace ComBravo.BusinessLogic.Interface
         AppointmentDto GetAppointmentByIdAction(int id);
         ResponseAction CreateAppointmentAction(AppointmentDto appointment);
         ResponseMsg UpdateAppointmentAction(AppointmentDto appointment);
+        ResponseMsg ApproveAppointmentAction(int id);
         ResponseMsg DeleteAppointmentAction(int id);
         List<int> GetEmptyHoursByDateAction(DateOnly date);
     }

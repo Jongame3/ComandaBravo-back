@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ComBravo.Api.Controller
 {
-    [Route("api/[controller]")]
+    [Route("api/appointment")]
     [ApiController]
     [Authorize]
     public class AppointmentController : ControllerBase
@@ -43,20 +43,20 @@ namespace ComBravo.Api.Controller
         }
 
         [HttpGet("GetByDate")]
-        public IActionResult GetByDate(DateOnly date)
+        public IActionResult GetByDate([FromBody] DateOnly date)
         {
             var result = _apointment.GetAllAppointmentsByDateAction(date);
             return Ok(result);
         }
         [HttpGet("GetFreeHours")]
-        public IActionResult GetFreeHours(DateOnly date)
+        public IActionResult GetFreeHours([FromBody]DateOnly date)
         {
             var result = _apointment.GetEmptyHoursByDateAction(date);
             return Ok(result);
         }
 
         [HttpPost]
-        public IActionResult Create(AppointmentDto dto) 
+        public IActionResult Create([FromBody]AppointmentDto dto) 
         {
             var status = _apointment.CreateAppointmentAction(dto);
             return Ok(status);
@@ -74,6 +74,13 @@ namespace ComBravo.Api.Controller
         public IActionResult Update(AppointmentDto dto) 
         {
             var status = _apointment.UpdateAppointmentAction(dto);
+            return Ok(status);
+        }
+        [HttpPut("approve")]
+        [Authorize(Roles ="Vet")]
+        public IActionResult Approve( int id)
+        {
+            var status = _apointment.ApproveAppointmentAction(id);
             return Ok(status);
         }
     }

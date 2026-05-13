@@ -28,11 +28,14 @@ namespace ComBravo.BusinessLogic.Core.Appointment
                 {
                     Id = item.Id,
                     UserId = item.UserId,
+                    Username = item.Username,
                     ProductInfo = item.ProductInfo,
                     StartTime = item.StartTime,
                     Date = item.Date,
                     Duration = item.Duration,
-                    PetInfo = item.PetInfo
+                    PetInfo = item.PetInfo,
+                    IsApproved = item.IsApproved
+                    
                 };
 
                 returnList.Add(localdto);
@@ -90,11 +93,13 @@ namespace ComBravo.BusinessLogic.Core.Appointment
                 {
                     Id = item.Id,
                     UserId = item.UserId,
+                    Username = item.Username,
                     ProductInfo = item.ProductInfo,
                     StartTime = item.StartTime,
                     Date = item.Date,
                     Duration = item.Duration,
-                    PetInfo = item.PetInfo
+                    PetInfo = item.PetInfo,
+                    IsApproved = item.IsApproved
                 };
 
                 returnList.Add(localdto);
@@ -119,11 +124,13 @@ namespace ComBravo.BusinessLogic.Core.Appointment
             {
                 Id = appointmentData.Id,
                 UserId = appointmentData.UserId,
+                Username= appointmentData.Username,
                 StartTime = appointmentData.StartTime,
                 ProductInfo = appointmentData.ProductInfo,
                 Duration = appointmentData.Duration,
                 Date = appointmentData.Date,
-                PetInfo= appointmentData.PetInfo
+                PetInfo= appointmentData.PetInfo,
+                IsApproved= appointmentData.IsApproved
                 
             };
         }
@@ -149,11 +156,13 @@ namespace ComBravo.BusinessLogic.Core.Appointment
                 {
                     Id = item.Id,
                     UserId = item.UserId,
+                    Username = item.Username,
                     ProductInfo = item.ProductInfo,
                     StartTime = item.StartTime,
                     Date = item.Date,
                     Duration = item.Duration,
-                    PetInfo = item.PetInfo
+                    PetInfo = item.PetInfo,
+                    IsApproved= item.IsApproved
                 };
 
                 returnList.Add(localdto);
@@ -175,11 +184,13 @@ namespace ComBravo.BusinessLogic.Core.Appointment
             {
                 Id = appointment.Id,
                 UserId = appointment.UserId,
+                Username= appointment.Username,
                 ProductInfo = appointment.ProductInfo,
                 StartTime = appointment.StartTime,
                 Date = appointment.Date,
                 PetInfo = appointment.PetInfo,
-                Duration = appointment.Duration
+                Duration = appointment.Duration,
+                IsApproved = false
             };
 
             using (var db = new AppointmentContext()) 
@@ -202,11 +213,13 @@ namespace ComBravo.BusinessLogic.Core.Appointment
 
                 aData.Id = appointment.Id;
                 aData.UserId = appointment.UserId;
+                aData.Username = appointment.Username;
                 aData.ProductInfo = appointment.ProductInfo;
                 aData.StartTime = appointment.StartTime;
                 aData.Duration = appointment.Duration;
                 aData.PetInfo = appointment.PetInfo;
                 aData.Date = appointment.Date;
+                aData.IsApproved = appointment.IsApproved;
 
                 db.SaveChanges();
             }
@@ -227,6 +240,23 @@ namespace ComBravo.BusinessLogic.Core.Appointment
                 db.SaveChanges();
             }
             return new ResponseMsg() { IsSucces = true, Message = "Appointment succhesfully deleted" };
+        }
+
+        protected ResponseMsg ExecuteApproveAppointmentAction(int id)
+        {
+            using (var db = new AppointmentContext()) 
+            {
+                var aData = db.Appointments.FirstOrDefault(x => x.Id == id);
+                if (aData == null)
+                {
+                    return new ResponseMsg() { IsSucces = false, Message = "there's no appointment with this id" };
+                }
+
+                aData.IsApproved = true;
+                db.SaveChanges();
+            }
+            return new ResponseMsg() { IsSucces = true, Message = "Appointment approved" };
+            
         }
     }   
 }

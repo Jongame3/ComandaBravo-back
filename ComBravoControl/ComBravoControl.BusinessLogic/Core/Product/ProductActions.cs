@@ -26,8 +26,7 @@ namespace ComBravo.BusinessLogic.Core.Product
                     Name = product.Name,
                     Description = product.Description,
                     Price = product.Price,
-                    Duration = product.Duration,
-                    Url = product.Url
+                    Duration = product.Duration
                 };
 
                 products.Add(product_);
@@ -53,8 +52,7 @@ namespace ComBravo.BusinessLogic.Core.Product
                 Name = product.Name,
                 Description = product.Description,
                 Price = product.Price,
-                Duration = product.Duration,
-                Url = product.Url
+                Duration = product.Duration
             };
         }
 
@@ -77,8 +75,7 @@ namespace ComBravo.BusinessLogic.Core.Product
                 Name = product.Name,
                 Description = product.Description,
                 Price = product.Price,
-                Duration = product.Duration,
-                Url = product.Url
+                Duration = product.Duration
             };
 
             using (var db = new ProductContext())
@@ -108,7 +105,6 @@ namespace ComBravo.BusinessLogic.Core.Product
                 pData.Price = product.Price;
                 pData.Duration = product.Duration;
                 pData.Description = product.Description;
-                pData.Url = product.Url;
 
                 db.SaveChanges();
             }

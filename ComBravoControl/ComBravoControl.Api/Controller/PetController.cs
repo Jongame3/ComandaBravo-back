@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ComBravo.Api.Controller
 {
-    [Route("api/[controller]")]
+    [Route("api/pet")]
     [ApiController]
     [Authorize]
     public class PetController : ControllerBase

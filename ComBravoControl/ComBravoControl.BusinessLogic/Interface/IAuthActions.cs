@@ -5,7 +5,7 @@ namespace ComBravo.BusinessLogic.Interface
 {
     public interface IAuthActions
     {
-        ResponseAction LoginActionFlow(UserAuthDto auth);
+        AuthResponse LoginActionFlow(UserAuthDto auth);
 
     }
 }

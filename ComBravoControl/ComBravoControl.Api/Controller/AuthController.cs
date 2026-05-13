@@ -35,7 +35,7 @@ namespace ComBravo.Api.Controller
             {
                 return Unauthorized(authStatus.Message);
             }
-            return Ok(new {token = authStatus.Message});
+            return Ok(authStatus);
         }
     }
 }

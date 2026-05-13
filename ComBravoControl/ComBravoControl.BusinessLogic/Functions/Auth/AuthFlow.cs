@@ -9,12 +9,12 @@ namespace ComBravo.BusinessLogic.Functions.Auth
 {
     public class AuthFlow : AuthActions ,IAuthActions 
     {
-        public ResponseAction LoginActionFlow(UserAuthDto auth)
+        public AuthResponse LoginActionFlow(UserAuthDto auth)
         {
             var user = ValidateLogin(auth);
             if (user == null) 
             {
-                return new ResponseAction()
+                return new AuthResponse()
                 {
                     IsSucces = false,
                     Message = "Invalid username or password"
@@ -23,11 +23,14 @@ namespace ComBravo.BusinessLogic.Functions.Auth
 
             var token = GenerateUserToken(user);
 
-            return new ResponseAction()
+            return new AuthResponse()
             {
                 IsSucces = true,
                 Message = token,
-                Id = user.Id
+                Id = user.Id,
+                Username = user.Username,
+                Role = user.Role
+                
             };
         }
     }
