@@ -42,7 +42,7 @@ namespace ComBravo.BusinessLogic.Core.Auth
                 Password = PasswordHasher.Hash(uReg.Password),
                 Email = uReg.Email,
                 Contacts = uReg.Contacts,
-                DOB = uReg.DOB,
+                DOB = DateTime.UtcNow,
                 Role = UserRole.User
             };
 

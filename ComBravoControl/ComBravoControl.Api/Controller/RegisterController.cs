@@ -26,10 +26,10 @@ namespace ComBravo.Api.Controller
 
             if (result.IsSucces == false)
             {
-                return BadRequest(result.Message);
+                return BadRequest(result);
             }
 
-            return Ok(new {id = result.Id, message  = result.Message});
+            return Ok(result);
         }
 
     }

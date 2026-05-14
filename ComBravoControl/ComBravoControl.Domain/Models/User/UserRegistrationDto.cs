@@ -11,6 +11,5 @@ namespace ComBravo.Domains.Models.User
         public string Password { get; set; }
         public string Email { get; set; }
         public string Contacts { get; set; }
-        public DateTime DOB { get; set; }
     }
 }
