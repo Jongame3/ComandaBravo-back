@@ -34,7 +34,7 @@ namespace ComBravo.BusinessLogic.Core.Product
             return products;
         }
 
-        protected ProductDto ExecuteGetProductByID(int id)
+        protected ProductDto ExecuteGetProductByIDAction(int id)
         {
             ProductData? product;
             using (var db = new ProductContext())

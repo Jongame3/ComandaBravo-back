@@ -26,11 +26,11 @@ namespace ComBravo.Api.Controller
             var product = _product.GetAllProductAction();
             return Ok(product);
         }
-        [HttpGet("get Product by ID")]
+        [HttpGet("GetProductById")]
         [AllowAnonymous]
         public IActionResult GetProductById(int id)
         {
-            var product = _product.GetProudctByIdAction(id);
+            var product = _product.GetProductByIdAction(id);
             return Ok(product);
         }
         [HttpPut]

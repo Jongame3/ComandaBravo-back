@@ -12,9 +12,9 @@ namespace ComBravo.BusinessLogic.Functions.Product
             return ExecuteGetAllProductsAction();
         }
 
-        public ProductDto GetProudctByIdAction(int id)
+        public ProductDto GetProductByIdAction(int id)
         {
-            return GetProudctByIdAction(id);
+            return ExecuteGetProductByIDAction(id);
         }
 
         public ResponseMsg ResponseProductCreateAction(ProductDto product)

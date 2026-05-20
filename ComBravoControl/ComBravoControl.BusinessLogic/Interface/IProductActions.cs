@@ -9,7 +9,7 @@ namespace ComBravo.BusinessLogic.Interface
     public interface IProductActions
     {
         List<ProductDto> GetAllProductAction();
-        ProductDto GetProudctByIdAction(int id);
+        ProductDto GetProductByIdAction(int id);
         ResponseMsg ResponseProductCreateAction(ProductDto product);
         ResponseMsg ResponseProductUpdateAction(ProductDto product);
         ResponseMsg ResponseProductDeleteAction(int id);
