@@ -34,6 +34,7 @@ namespace ComBravo.BusinessLogic.Core.Appointment
                     Date = item.Date,
                     Duration = item.Duration,
                     PetInfo = item.PetInfo,
+                    PetType = item.PetType,
                     IsApproved = item.IsApproved
                     
                 };
@@ -99,6 +100,7 @@ namespace ComBravo.BusinessLogic.Core.Appointment
                     Date = item.Date,
                     Duration = item.Duration,
                     PetInfo = item.PetInfo,
+                    PetType = item.PetType,
                     IsApproved = item.IsApproved
                 };
 
@@ -130,6 +132,7 @@ namespace ComBravo.BusinessLogic.Core.Appointment
                 Duration = appointmentData.Duration,
                 Date = appointmentData.Date,
                 PetInfo= appointmentData.PetInfo,
+                PetType= appointmentData.PetType,
                 IsApproved= appointmentData.IsApproved
                 
             };
@@ -162,6 +165,7 @@ namespace ComBravo.BusinessLogic.Core.Appointment
                     Date = item.Date,
                     Duration = item.Duration,
                     PetInfo = item.PetInfo,
+                    PetType = item.PetType,
                     IsApproved= item.IsApproved
                 };
 
@@ -190,6 +194,7 @@ namespace ComBravo.BusinessLogic.Core.Appointment
                 Date = appointment.Date,
                 PetInfo = appointment.PetInfo,
                 Duration = appointment.Duration,
+                PetType = appointment.PetType,
                 IsApproved = false
             };
 
@@ -218,6 +223,7 @@ namespace ComBravo.BusinessLogic.Core.Appointment
                 aData.StartTime = appointment.StartTime;
                 aData.Duration = appointment.Duration;
                 aData.PetInfo = appointment.PetInfo;
+                aData.PetType  = appointment.PetType;
                 aData.Date = appointment.Date;
                 aData.IsApproved = appointment.IsApproved;
 

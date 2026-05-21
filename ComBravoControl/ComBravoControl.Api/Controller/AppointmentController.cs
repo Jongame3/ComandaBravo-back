@@ -49,7 +49,7 @@ namespace ComBravo.Api.Controller
             return Ok(result);
         }
         [HttpGet("GetFreeHours")]
-        public IActionResult GetFreeHours([FromBody]DateOnly date)
+        public IActionResult GetFreeHours(DateOnly date)
         {
             var result = _apointment.GetEmptyHoursByDateAction(date);
             return Ok(result);

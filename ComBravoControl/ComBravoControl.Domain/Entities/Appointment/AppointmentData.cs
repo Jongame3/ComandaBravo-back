@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using ComBravo.Domains.Entities.Product;
+using ComBravo.Domains.Enums;
 
 namespace ComBravo.Domains.Entities.Appointment
 {
@@ -21,6 +22,8 @@ namespace ComBravo.Domains.Entities.Appointment
         public DateOnly Date {  get; set; }
         [Required]
         public string PetInfo { get; set; }
+        [Required]
+        public PetType PetType { get; set; }
         [Required]
         public int Duration { get; set; }
         [Required]
