@@ -33,7 +33,7 @@ namespace ComBravo.Api.Controller
 
             if (authStatus.IsSucces == false) 
             {
-                return Unauthorized(authStatus.Message);
+                return Unauthorized(authStatus);
             }
             return Ok(authStatus);
         }

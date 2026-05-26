@@ -32,7 +32,7 @@ namespace ComBravo.BusinessLogic.Functions.User
             return ExecuteUserDeleteAction(id);
         }
 
-        public ResponseMsg ResponseUserUpdateAction(UserDto user)
+        public ResponseMsg ResponseUserUpdateAction(UserUpdateDto user)
         {
             return ExecuteUserUpdateAction(user);
         }

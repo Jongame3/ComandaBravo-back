@@ -12,6 +12,6 @@ namespace ComBravo.BusinessLogic.Interface
         UserDto GetUserByIdAction(int id);
         ResponseMsg ResponseUserCreateAction(UserDto user);
         ResponseMsg ResponseUserDeleteAction(int id);
-        ResponseMsg ResponseUserUpdateAction(UserDto user);
+        ResponseMsg ResponseUserUpdateAction(UserUpdateDto user);
     }
 }

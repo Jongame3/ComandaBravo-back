@@ -8,6 +8,7 @@ namespace ComBravo.Api.Controller
 {
     [Route("api/User")]
     [ApiController]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private IUserActions _user;
@@ -37,7 +38,7 @@ namespace ComBravo.Api.Controller
             return Ok(status);
         }
         [HttpPut]
-        public IActionResult Update([FromBody] UserDto user) 
+        public IActionResult Update([FromBody] UserUpdateDto user) 
         {
             var status = _user.ResponseUserUpdateAction(user);
             return Ok(status);

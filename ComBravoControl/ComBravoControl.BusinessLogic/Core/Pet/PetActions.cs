@@ -87,7 +87,7 @@ namespace ComBravo.BusinessLogic.Core.Pet
             PetData? pData;
             using (var db = new PetContext()) 
             {
-                pData = db.Pets.FirstOrDefault(x => x.Name.Equals(pet.Name) && x.Type == pet.Type);
+                pData = db.Pets.FirstOrDefault(x => x.Name.Equals(pet.Name) && x.Type == pet.Type && x.UserID == pet.UserID);
             }
             if (pData != null)
             {
@@ -134,7 +134,7 @@ namespace ComBravo.BusinessLogic.Core.Pet
         {
             using (var db = new PetContext())
             {
-                var pData = db.Pets.FirstOrDefault(x => x.Id ==  id);
+                var pData = db.Pets.FirstOrDefault(x => x.Id == id);
                 if (pData == null)
                 {
                     return new ResponseMsg() { IsSucces = false, Message = "There's no such pet in our system" };

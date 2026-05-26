@@ -1,12 +1,13 @@
-﻿using System;
+﻿using AutoMapper;
+using ComBravo.BusinessLogic.Structure;
+using ComBravo.DataAccess.Context;
+using ComBravo.Domains.Entities.User;
+using ComBravo.Domains.Models.Base;
+using ComBravo.Domains.Models.User;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using ComBravo.Domains.Models.User;
-using ComBravo.Domains.Entities.User;
-using ComBravo.DataAccess.Context;
-using ComBravo.Domains.Models.Base;
-using AutoMapper;
-using ComBravo.BusinessLogic.Structure;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ComBravo.BusinessLogic.Core.User
 {
@@ -66,11 +67,16 @@ namespace ComBravo.BusinessLogic.Core.User
             };
         }
 
-        protected ResponseMsg ExecuteUserUpdateAction(UserDto user)
+        protected ResponseMsg ExecuteUserUpdateAction(UserUpdateDto user)
         {
+            if (string.IsNullOrEmpty(user.Username) || string.IsNullOrEmpty(user.OldPassword) || string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.Contacts))
+                return null;
+
+            var passwordHash = PasswordHasher.Hash(user.OldPassword);
+
             using (var db = new UserContext())
             {
-                var uData = db.Users.FirstOrDefault(x => x.Id == user.Id);
+                var uData = db.Users.FirstOrDefault(x => x.Id == user.Id && x.Password == passwordHash);
 
                 if(uData == null)
                 {
@@ -78,10 +84,9 @@ namespace ComBravo.BusinessLogic.Core.User
                 }
 
                 uData.Username = user.Username;
-                uData.Password = user.Password;
+                uData.Password = PasswordHasher.Hash(user.NewPassword);
                 uData.Contacts = user.Contacts;
                 uData.Email = user.Email;
-                uData.Role = user.Role;
 
                 db.SaveChanges();
             }
