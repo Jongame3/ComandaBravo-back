@@ -98,7 +98,7 @@ namespace ComBravo.BusinessLogic.Core.Product
                 
                 if (pData == null)
                 {
-                    return new ResponseMsg() { IsSucces = false, Message = "This user does not exist" };
+                    return new ResponseMsg() { IsSucces = false, Message = "This product does not exist" };
                 }
 
                 pData.Name = product.Name;
