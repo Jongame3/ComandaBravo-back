@@ -20,8 +20,6 @@ namespace ComBravo.Domains.Entities.Pet
         public PetType Type { get; set; }
         [Required]
         public int UserID { get; set; }
-        //[Required]
-        //public UserData Owner { get; set; }
 
     }
 }

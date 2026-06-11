@@ -7,7 +7,7 @@ namespace ComBravo.BusinessLogic.Structure
 {
     public class TokenService
     {
-           public TokenService() { }
+        public TokenService() { }
 
         public string GenerateToken(int userId, string userName, string role)
         {

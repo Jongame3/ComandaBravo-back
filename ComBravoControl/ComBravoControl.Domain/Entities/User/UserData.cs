@@ -25,7 +25,7 @@ namespace ComBravo.Domains.Entities.User
         [Required]
         [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
-
+        [Required]
         public UserRole Role { get; set;  }
 
     }

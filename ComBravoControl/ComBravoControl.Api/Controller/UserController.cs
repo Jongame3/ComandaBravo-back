@@ -32,6 +32,7 @@ namespace ComBravo.Api.Controller
             return Ok(user);
         }
         [HttpPost]
+        [Authorize(Roles = "Vet")]
         public IActionResult Create([FromBody] UserDto user)
         {
             var status = _user.ResponseUserCreateAction(user);
@@ -44,6 +45,7 @@ namespace ComBravo.Api.Controller
             return Ok(status);
         }
         [HttpDelete]
+        [Authorize(Roles ="Vet")]
         public IActionResult Delete(int id) 
         {
             var status = _user.ResponseUserDeleteAction(id);
