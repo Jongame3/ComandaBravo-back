@@ -45,7 +45,6 @@ namespace ComBravo.Api.Controller
             return Ok(status);
         }
         [HttpDelete]
-        [Authorize(Roles ="Vet")]
         public IActionResult Delete(int id) 
         {
             var status = _user.ResponseUserDeleteAction(id);
